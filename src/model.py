@@ -1,11 +1,12 @@
 import torch
 import torch.nn as nn
+import pytest
 
 
 # define the CNN architecture
 class MyModel(nn.Module):
     def __init__(self, num_classes: int = 1000, dropout: float = 0.7) -> None:
-        super().__init__()
+        super(MyModel, self).__init__()
 
         # YOUR CODE HERE
         # Define a CNN architecture. Remember to use the variable num_classes
@@ -67,7 +68,6 @@ class MyModel(nn.Module):
 ######################################################################################
 #                                     TESTS
 ######################################################################################
-import pytest
 
 
 @pytest.fixture(scope="session")
