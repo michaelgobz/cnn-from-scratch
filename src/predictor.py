@@ -21,7 +21,7 @@ class Predictor(nn.Module):
         # We use nn.Sequential and not nn.Compose because the former
         # is compatible with torch.script, while the latter isn't
         self.transforms = nn.Sequential(
-            T.Resize([256, ]),  # We use single int value inside a list due to torchscript type restrictions
+            T.Resize([256, ]),  # We use single int value inside a list due to torch script type restrictions
             T.CenterCrop(224),
             T.ConvertImageDtype(torch.float),
             T.Normalize(mean.tolist(), std.tolist())
@@ -34,7 +34,7 @@ class Predictor(nn.Module):
             # 2. get the logits
             x  = # YOUR CODE HERE
             # 3. apply softmax
-            #    HINT: remmeber to apply softmax across dim=1
+            #    HINT: remember to apply softmax across dim=1
             x  = # YOUR CODE HERE
 
             return x
