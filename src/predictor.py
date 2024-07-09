@@ -30,12 +30,12 @@ class Predictor(nn.Module):
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         with torch.no_grad():
             # 1. apply transforms
-            x  = # YOUR CODE HERE
+            x = self.transforms(x)
             # 2. get the logits
-            x  = # YOUR CODE HERE
+            x = self.model(x)
             # 3. apply softmax
             #    HINT: remember to apply softmax across dim=1
-            x  = # YOUR CODE HERE
+            x = F.softmax(x, dim=1)
 
             return x
 
@@ -62,7 +62,7 @@ def predictor_test(test_dataloader, model_reloaded):
     pred = np.array(pred)
     truth = np.array(truth)
 
-    print(f"Accuracy: {(pred==truth).sum() / pred.shape[0]}")
+    print(f"Accuracy: {(pred == truth).sum() / pred.shape[0]}")
 
     return truth, pred
 
@@ -81,7 +81,6 @@ def data_loaders():
 
 
 def test_model_construction(data_loaders):
-
     from .model import MyModel
     from .helpers import compute_mean_and_std
 

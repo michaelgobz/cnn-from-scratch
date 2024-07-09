@@ -12,7 +12,7 @@ def create_submit_pkg():
     # Notebooks
     notebooks = glob.glob("*.ipynb")
 
-    # Genereate HTML files from the notebooks
+    # Generate HTML files from the notebooks
     for nb in notebooks:
         cmd_line = f"jupyter nbconvert --to html {nb}"
 
