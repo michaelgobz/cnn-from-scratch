@@ -31,8 +31,8 @@ def get_optimizer(
     :param momentum: the momentum (if the optimizer uses it)
     :param weight_decay: regularization coefficient
     """
-    print(str(optimizer).lower())
-    if str(optimizer).lower() == "sgd":
+
+    if optimizer.lower() == "sgd":
         # YOUR CODE HERE: create an instance of the SGD
         # optimizer. Use the input parameters learning_rate, momentum
         # and weight_decay
@@ -43,7 +43,7 @@ def get_optimizer(
             weight_decay=weight_decay,
         )
 
-    elif str(optimizer).lower() == "adam":
+    elif optimizer.lower() == "adam":
         # YOUR CODE HERE: create an instance of the Adam
         # optimizer. Use the input parameters learning_rate, momentum
         # and weight_decay
