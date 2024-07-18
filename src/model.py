@@ -52,7 +52,10 @@ class MyModel(nn.Module):
             # YOUR CODE HERE
             nn.BatchNorm1d(2000),
             nn.ReLU(),
-            nn.Linear(2000, num_classes),
+            nn.Linear(2000,500),
+            nn.Dropout(dropout),
+            nn.BatchNorm1d(500),
+            nn.Linear(500, num_classes),
 
         )
 
