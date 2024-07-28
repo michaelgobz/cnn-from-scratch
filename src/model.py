@@ -19,21 +19,21 @@ class MyModel(nn.Module):
             # YOUR CODE HERE
             nn.BatchNorm2d(16),
             nn.ReLU(),
-            nn.MaxPool2d(2, 2),
+            nn.MaxPool2d(2, 1),
 
             nn.Conv2d(16, 32, 3, padding=1),  # -> 32x112x112
             # Add batch normalization (BatchNorm2d) here
             # YOUR CODE HERE
             nn.BatchNorm2d(32),
             nn.ReLU(),
-            nn.MaxPool2d(2, 2),  # -> 32x8x8
+            nn.MaxPool2d(2, 1),  # -> 32x8x8
 
             nn.Conv2d(32, 64, 3, padding=1),  # -> 64x56x56
             # Add batch normalization (BatchNorm2d) here
             # YOUR CODE HERE
             nn.BatchNorm2d(64),
             nn.ReLU(),
-            nn.MaxPool2d(2, 2),  # -> 64x4x4
+            nn.MaxPool2d(2, 1),  # -> 64x4x4
 
             # Since we are using BatchNorm and data augmentation,
             # we can go deeper than before and add one more conv layer
@@ -42,19 +42,26 @@ class MyModel(nn.Module):
             # YOUR CODE HERE
             nn.BatchNorm2d(128),
             nn.ReLU(),
-            nn.MaxPool2d(2, 2),  # -> 128x14x14
+            nn.MaxPool2d(2, 1),  # -> 128x14x14
 
             nn.Flatten(),  # -> 1x128x14x14
 
-            nn.Linear(128 * 14 * 14, 2000),  # -> 500
-            nn.Dropout(dropout),
+            nn.Linear(128 * 14 * 14, 12500),  # -> 12500
             # Add batch normalization (BatchNorm1d, NOT BatchNorm2d) here
             # YOUR CODE HERE
+            nn.Dropout(dropout),
+            nn.BatchNorm1d(12500),
+            nn.ReLU(),
+            nn.Linear(12500, 6500),  # -> 6500
+            nn.Dropout(dropout),
+            nn.BatchNorm1d(6500),
+            nn.ReLU(),
+            nn.Linear(6500, 2000),  # -> 2000
             nn.BatchNorm1d(2000),
             nn.ReLU(),
-            nn.Linear(2000,500),
-            nn.Dropout(dropout),
+            nn.Linear(2000, 500),  # -> 500
             nn.BatchNorm1d(500),
+            nn.ReLU(),
             nn.Linear(500, num_classes),
 
         )
