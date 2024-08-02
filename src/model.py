@@ -46,13 +46,13 @@ class MyModel(nn.Module):
 
             nn.Flatten(),  # -> 1x128x14x14
 
-            nn.Linear(128 * 14 * 14, 12500),  # -> 12500
+            nn.Linear(25088, 10000),  # -> 12500
             # Add batch normalization (BatchNorm1d, NOT BatchNorm2d) here
             # YOUR CODE HERE
             nn.Dropout(dropout),
-            nn.BatchNorm1d(12500),
+            nn.BatchNorm1d(10000),
             nn.ReLU(),
-            nn.Linear(12500, 6500),  # -> 6500
+            nn.Linear(10000, 6500),  # -> 6500
             nn.Dropout(dropout),
             nn.BatchNorm1d(6500),
             nn.ReLU(),
@@ -102,3 +102,5 @@ def test_model_construction(data_loaders):
     assert out.shape == torch.Size(
         [2, 23]
     ), f"Expected an output tensor of size (2, 23), got {out.shape}"
+
+#%%
