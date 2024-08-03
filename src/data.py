@@ -46,7 +46,7 @@ def get_data_loaders(
             [
                 transforms.Resize(256),
                 transforms.RandomCrop(224),
-                transforms.RandomHorizontalFlip(0.5),
+                transforms.RandomHorizontalFlip(0.2),
                 transforms.ToTensor(),
                 transforms.Normalize(mean, std),
             ]

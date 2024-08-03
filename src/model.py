@@ -44,17 +44,20 @@ class MyModel(nn.Module):
             nn.ReLU(),
             nn.MaxPool2d(2, 2),  # -> 128x14x14
 
-            nn.Flatten(),  # -> 1x128x14x14
+            nn.Conv2d(128, 256, 3, padding=1),  # -> 256x14x14
+            # Add batch normalization (BatchNorm2d) here
+            # YOUR CODE HERE
+            nn.BatchNorm2d(256),
+            nn.ReLU(),
+            nn.MaxPool2d(2, 2),  # -> 256x7x7
 
-            nn.Linear(1*128*14*14, 12500),  # -> 12500
+            nn.Flatten(),  # -> 1x256x7x7
+
+            nn.Linear(1*256*7*7, 6500),  # -> 12500
             # Add batch normalization (BatchNorm1d, NOT BatchNorm2d) here
             # YOUR CODE HERE
             nn.Dropout(dropout),
             nn.BatchNorm1d(12500),
-            nn.ReLU(),
-            nn.Linear(12500, 6500),  # -> 6500
-            nn.Dropout(dropout),
-            nn.BatchNorm1d(6500),
             nn.ReLU(),
             nn.Linear(6500, 2000),  # -> 2000
             nn.BatchNorm1d(2000),
