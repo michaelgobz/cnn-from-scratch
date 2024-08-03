@@ -57,7 +57,7 @@ class MyModel(nn.Module):
             # Add batch normalization (BatchNorm1d, NOT BatchNorm2d) here
             # YOUR CODE HERE
             nn.Dropout(dropout),
-            nn.BatchNorm1d(12500),
+            nn.BatchNorm1d(6500),
             nn.ReLU(),
             nn.Linear(6500, 2000),  # -> 2000
             nn.BatchNorm1d(2000),
