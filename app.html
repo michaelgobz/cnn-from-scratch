@@ -7557,11 +7557,12 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># install support  libraries</span>
 <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>ipywidgets<span class="w"> </span>jupyterlab
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 <span class="o">!</span>jupyter<span class="w"> </span>nbextension<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--py<span class="w"> </span>widgetsnbextension
 <span class="o">!</span>jupyter<span class="w"> </span>labextension<span class="w"> </span>install<span class="w"> </span>@jupyter-widgets/jupyterlab-manager
 </pre></div>
@@ -7577,200 +7578,293 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Requirement already satisfied: ipywidgets in /opt/conda/lib/python3.8/site-packages (8.1.3)
-Collecting jupyterlab
-  Using cached jupyterlab-4.2.4-py3-none-any.whl (11.6 MB)
-Requirement already satisfied: traitlets&gt;=4.3.1 in /opt/conda/lib/python3.8/site-packages (from ipywidgets) (5.14.1)
-Requirement already satisfied: jupyterlab-widgets~=3.0.11 in /opt/conda/lib/python3.8/site-packages (from ipywidgets) (3.0.11)
-Requirement already satisfied: ipython&gt;=6.1.0 in /opt/conda/lib/python3.8/site-packages (from ipywidgets) (8.12.3)
-Requirement already satisfied: widgetsnbextension~=4.0.11 in /opt/conda/lib/python3.8/site-packages (from ipywidgets) (4.0.11)
+Requirement already satisfied: jupyterlab in /opt/conda/lib/python3.8/site-packages (4.2.4)
 Requirement already satisfied: comm&gt;=0.1.3 in /opt/conda/lib/python3.8/site-packages (from ipywidgets) (0.2.2)
-Collecting jupyter-lsp&gt;=2.0.0
-  Using cached jupyter_lsp-2.2.5-py3-none-any.whl (69 kB)
-Collecting importlib-resources&gt;=1.4
-  Using cached importlib_resources-6.4.0-py3-none-any.whl (38 kB)
-Collecting jupyterlab-server&lt;3,&gt;=2.27.1
-  Using cached jupyterlab_server-2.27.3-py3-none-any.whl (59 kB)
-Collecting ipykernel&gt;=6.5.0
-  Using cached ipykernel-6.29.5-py3-none-any.whl (117 kB)
-Requirement already satisfied: jinja2&gt;=3.0.3 in /opt/conda/lib/python3.8/site-packages (from jupyterlab) (3.0.3)
-Collecting async-lru&gt;=1.0.0
-  Using cached async_lru-2.0.4-py3-none-any.whl (6.1 kB)
-Requirement already satisfied: packaging in /opt/conda/lib/python3.8/site-packages (from jupyterlab) (21.3)
+Requirement already satisfied: ipython&gt;=6.1.0 in /opt/conda/lib/python3.8/site-packages (from ipywidgets) (8.12.3)
+Requirement already satisfied: jupyterlab-widgets~=3.0.11 in /opt/conda/lib/python3.8/site-packages (from ipywidgets) (3.0.11)
+Requirement already satisfied: widgetsnbextension~=4.0.11 in /opt/conda/lib/python3.8/site-packages (from ipywidgets) (4.0.11)
+Requirement already satisfied: traitlets&gt;=4.3.1 in /opt/conda/lib/python3.8/site-packages (from ipywidgets) (5.14.1)
 Requirement already satisfied: tomli&gt;=1.2.2 in /opt/conda/lib/python3.8/site-packages (from jupyterlab) (2.0.1)
-Collecting tornado&gt;=6.2.0
-  Using cached tornado-6.4.1-cp38-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (436 kB)
-Requirement already satisfied: importlib-metadata&gt;=4.8.3 in /opt/conda/lib/python3.8/site-packages (from jupyterlab) (4.11.2)
-Collecting httpx&gt;=0.25.0
-  Using cached httpx-0.27.0-py3-none-any.whl (75 kB)
-Requirement already satisfied: setuptools&gt;=40.1.0 in /opt/conda/lib/python3.8/site-packages (from jupyterlab) (60.9.3)
-Collecting notebook-shim&gt;=0.2
-  Using cached notebook_shim-0.2.4-py3-none-any.whl (13 kB)
+Requirement already satisfied: importlib-resources&gt;=1.4 in /opt/conda/lib/python3.8/site-packages (from jupyterlab) (6.4.0)
+Requirement already satisfied: tornado&gt;=6.2.0 in /opt/conda/lib/python3.8/site-packages (from jupyterlab) (6.4.1)
+Requirement already satisfied: ipykernel&gt;=6.5.0 in /opt/conda/lib/python3.8/site-packages (from jupyterlab) (6.29.5)
+Requirement already satisfied: jinja2&gt;=3.0.3 in /opt/conda/lib/python3.8/site-packages (from jupyterlab) (3.0.3)
+Requirement already satisfied: httpx&gt;=0.25.0 in /opt/conda/lib/python3.8/site-packages (from jupyterlab) (0.27.0)
+Requirement already satisfied: jupyter-server&lt;3,&gt;=2.4.0 in /opt/conda/lib/python3.8/site-packages (from jupyterlab) (2.14.2)
 Requirement already satisfied: jupyter-core in /opt/conda/lib/python3.8/site-packages (from jupyterlab) (5.7.0)
-Collecting jupyter-server&lt;3,&gt;=2.4.0
-  Using cached jupyter_server-2.14.2-py3-none-any.whl (383 kB)
+Requirement already satisfied: jupyterlab-server&lt;3,&gt;=2.27.1 in /opt/conda/lib/python3.8/site-packages (from jupyterlab) (2.27.3)
+Requirement already satisfied: setuptools&gt;=40.1.0 in /opt/conda/lib/python3.8/site-packages (from jupyterlab) (60.9.3)
+Requirement already satisfied: importlib-metadata&gt;=4.8.3 in /opt/conda/lib/python3.8/site-packages (from jupyterlab) (4.11.2)
+Requirement already satisfied: packaging in /opt/conda/lib/python3.8/site-packages (from jupyterlab) (24.1)
+Requirement already satisfied: async-lru&gt;=1.0.0 in /opt/conda/lib/python3.8/site-packages (from jupyterlab) (2.0.4)
+Requirement already satisfied: notebook-shim&gt;=0.2 in /opt/conda/lib/python3.8/site-packages (from jupyterlab) (0.2.4)
+Requirement already satisfied: jupyter-lsp&gt;=2.0.0 in /opt/conda/lib/python3.8/site-packages (from jupyterlab) (2.2.5)
 Requirement already satisfied: typing-extensions&gt;=4.0.0 in /opt/conda/lib/python3.8/site-packages (from async-lru&gt;=1.0.0-&gt;jupyterlab) (4.9.0)
-Collecting sniffio
-  Using cached sniffio-1.3.1-py3-none-any.whl (10 kB)
-Requirement already satisfied: idna in /opt/conda/lib/python3.8/site-packages (from httpx&gt;=0.25.0-&gt;jupyterlab) (3.3)
-Collecting httpcore==1.*
-  Using cached httpcore-1.0.5-py3-none-any.whl (77 kB)
+Requirement already satisfied: sniffio in /opt/conda/lib/python3.8/site-packages (from httpx&gt;=0.25.0-&gt;jupyterlab) (1.3.1)
 Requirement already satisfied: certifi in /opt/conda/lib/python3.8/site-packages (from httpx&gt;=0.25.0-&gt;jupyterlab) (2021.10.8)
-Collecting anyio
-  Using cached anyio-4.4.0-py3-none-any.whl (86 kB)
-Collecting h11&lt;0.15,&gt;=0.13
-  Using cached h11-0.14.0-py3-none-any.whl (58 kB)
+Requirement already satisfied: anyio in /opt/conda/lib/python3.8/site-packages (from httpx&gt;=0.25.0-&gt;jupyterlab) (4.4.0)
+Requirement already satisfied: idna in /opt/conda/lib/python3.8/site-packages (from httpx&gt;=0.25.0-&gt;jupyterlab) (3.3)
+Requirement already satisfied: httpcore==1.* in /opt/conda/lib/python3.8/site-packages (from httpx&gt;=0.25.0-&gt;jupyterlab) (1.0.5)
+Requirement already satisfied: h11&lt;0.15,&gt;=0.13 in /opt/conda/lib/python3.8/site-packages (from httpcore==1.*-&gt;httpx&gt;=0.25.0-&gt;jupyterlab) (0.14.0)
 Requirement already satisfied: zipp&gt;=0.5 in /opt/conda/lib/python3.8/site-packages (from importlib-metadata&gt;=4.8.3-&gt;jupyterlab) (3.7.0)
-Requirement already satisfied: matplotlib-inline&gt;=0.1 in /opt/conda/lib/python3.8/site-packages (from ipykernel&gt;=6.5.0-&gt;jupyterlab) (0.1.7)
-Collecting nest-asyncio
-  Using cached nest_asyncio-1.6.0-py3-none-any.whl (5.2 kB)
-Collecting debugpy&gt;=1.6.5
-  Using cached debugpy-1.8.5-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.1 MB)
-Requirement already satisfied: pyzmq&gt;=24 in /opt/conda/lib/python3.8/site-packages (from ipykernel&gt;=6.5.0-&gt;jupyterlab) (25.1.2)
+Requirement already satisfied: nest-asyncio in /opt/conda/lib/python3.8/site-packages (from ipykernel&gt;=6.5.0-&gt;jupyterlab) (1.6.0)
+Requirement already satisfied: jupyter-client&gt;=6.1.12 in /opt/conda/lib/python3.8/site-packages (from ipykernel&gt;=6.5.0-&gt;jupyterlab) (8.6.2)
 Requirement already satisfied: psutil in /opt/conda/lib/python3.8/site-packages (from ipykernel&gt;=6.5.0-&gt;jupyterlab) (5.9.0)
-Collecting jupyter-client&gt;=6.1.12
-  Using cached jupyter_client-8.6.2-py3-none-any.whl (105 kB)
-Requirement already satisfied: stack-data in /opt/conda/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (0.6.3)
-Requirement already satisfied: pygments&gt;=2.4.0 in /opt/conda/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (2.17.2)
-Requirement already satisfied: pexpect&gt;4.3 in /opt/conda/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (4.9.0)
-Requirement already satisfied: backcall in /opt/conda/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (0.2.0)
-Requirement already satisfied: decorator in /opt/conda/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (5.1.1)
+Requirement already satisfied: matplotlib-inline&gt;=0.1 in /opt/conda/lib/python3.8/site-packages (from ipykernel&gt;=6.5.0-&gt;jupyterlab) (0.1.7)
+Requirement already satisfied: pyzmq&gt;=24 in /opt/conda/lib/python3.8/site-packages (from ipykernel&gt;=6.5.0-&gt;jupyterlab) (25.1.2)
+Requirement already satisfied: debugpy&gt;=1.6.5 in /opt/conda/lib/python3.8/site-packages (from ipykernel&gt;=6.5.0-&gt;jupyterlab) (1.8.5)
 Requirement already satisfied: jedi&gt;=0.16 in /opt/conda/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (0.19.1)
-Requirement already satisfied: prompt-toolkit!=3.0.37,&lt;3.1.0,&gt;=3.0.30 in /opt/conda/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (3.0.43)
+Requirement already satisfied: pygments&gt;=2.4.0 in /opt/conda/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (2.17.2)
+Requirement already satisfied: backcall in /opt/conda/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (0.2.0)
 Requirement already satisfied: pickleshare in /opt/conda/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (0.7.5)
+Requirement already satisfied: stack-data in /opt/conda/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (0.6.3)
+Requirement already satisfied: prompt-toolkit!=3.0.37,&lt;3.1.0,&gt;=3.0.30 in /opt/conda/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (3.0.43)
+Requirement already satisfied: pexpect&gt;4.3 in /opt/conda/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (4.9.0)
+Requirement already satisfied: decorator in /opt/conda/lib/python3.8/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (5.1.1)
 Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/conda/lib/python3.8/site-packages (from jinja2&gt;=3.0.3-&gt;jupyterlab) (2.1.0)
 Requirement already satisfied: platformdirs&gt;=2.5 in /opt/conda/lib/python3.8/site-packages (from jupyter-core-&gt;jupyterlab) (4.2.2)
-Collecting jupyter-server-terminals&gt;=0.4.4
-  Using cached jupyter_server_terminals-0.5.3-py3-none-any.whl (13 kB)
-Collecting packaging
-  Using cached packaging-24.1-py3-none-any.whl (53 kB)
-Collecting prometheus-client&gt;=0.9
-  Using cached prometheus_client-0.20.0-py3-none-any.whl (54 kB)
-Collecting overrides&gt;=5.0
-  Using cached overrides-7.7.0-py3-none-any.whl (17 kB)
-Collecting terminado&gt;=0.8.3
-  Using cached terminado-0.18.1-py3-none-any.whl (14 kB)
-Collecting nbconvert&gt;=6.4.4
-  Using cached nbconvert-7.16.4-py3-none-any.whl (257 kB)
-Collecting argon2-cffi&gt;=21.1
-  Using cached argon2_cffi-23.1.0-py3-none-any.whl (15 kB)
-Collecting send2trash&gt;=1.8.2
-  Using cached Send2Trash-1.8.3-py3-none-any.whl (18 kB)
-Collecting websocket-client&gt;=1.7
-  Using cached websocket_client-1.8.0-py3-none-any.whl (58 kB)
-Collecting nbformat&gt;=5.3.0
-  Using cached nbformat-5.10.4-py3-none-any.whl (78 kB)
-Collecting jupyter-events&gt;=0.9.0
-  Using cached jupyter_events-0.10.0-py3-none-any.whl (18 kB)
-Collecting jsonschema&gt;=4.18.0
-  Using cached jsonschema-4.23.0-py3-none-any.whl (88 kB)
-Collecting babel&gt;=2.10
-  Downloading babel-2.16.0-py3-none-any.whl (9.6 MB)
-     <span class="ansi-black-intense-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">9.6/9.6 MB</span> <span class="ansi-red-fg">41.7 MB/s</span> eta <span class="ansi-cyan-fg">0:00:00</span>:00:0100:01
-Collecting json5&gt;=0.9.0
-  Using cached json5-0.9.25-py3-none-any.whl (30 kB)
-Collecting requests&gt;=2.31
-  Using cached requests-2.32.3-py3-none-any.whl (64 kB)
-Collecting exceptiongroup&gt;=1.0.2
-  Using cached exceptiongroup-1.2.2-py3-none-any.whl (16 kB)
-Collecting argon2-cffi-bindings
-  Using cached argon2_cffi_bindings-21.2.0-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (86 kB)
+Requirement already satisfied: overrides&gt;=5.0 in /opt/conda/lib/python3.8/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (7.7.0)
+Requirement already satisfied: argon2-cffi&gt;=21.1 in /opt/conda/lib/python3.8/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (23.1.0)
+Requirement already satisfied: terminado&gt;=0.8.3 in /opt/conda/lib/python3.8/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.18.1)
+Requirement already satisfied: send2trash&gt;=1.8.2 in /opt/conda/lib/python3.8/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (1.8.3)
+Requirement already satisfied: prometheus-client&gt;=0.9 in /opt/conda/lib/python3.8/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.20.0)
+Requirement already satisfied: websocket-client&gt;=1.7 in /opt/conda/lib/python3.8/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (1.8.0)
+Requirement already satisfied: jupyter-events&gt;=0.9.0 in /opt/conda/lib/python3.8/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.10.0)
+Requirement already satisfied: jupyter-server-terminals&gt;=0.4.4 in /opt/conda/lib/python3.8/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.5.3)
+Requirement already satisfied: nbformat&gt;=5.3.0 in /opt/conda/lib/python3.8/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (5.10.4)
+Requirement already satisfied: nbconvert&gt;=6.4.4 in /opt/conda/lib/python3.8/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (7.16.4)
+Requirement already satisfied: babel&gt;=2.10 in /opt/conda/lib/python3.8/site-packages (from jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (2.16.0)
+Requirement already satisfied: jsonschema&gt;=4.18.0 in /opt/conda/lib/python3.8/site-packages (from jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (4.23.0)
+Requirement already satisfied: requests&gt;=2.31 in /opt/conda/lib/python3.8/site-packages (from jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (2.32.3)
+Requirement already satisfied: json5&gt;=0.9.0 in /opt/conda/lib/python3.8/site-packages (from jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (0.9.25)
+Requirement already satisfied: exceptiongroup&gt;=1.0.2 in /opt/conda/lib/python3.8/site-packages (from anyio-&gt;httpx&gt;=0.25.0-&gt;jupyterlab) (1.2.2)
+Requirement already satisfied: argon2-cffi-bindings in /opt/conda/lib/python3.8/site-packages (from argon2-cffi&gt;=21.1-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (21.2.0)
 Requirement already satisfied: pytz&gt;=2015.7 in /opt/conda/lib/python3.8/site-packages (from babel&gt;=2.10-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (2021.3)
 Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.3 in /opt/conda/lib/python3.8/site-packages (from jedi&gt;=0.16-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (0.8.4)
-Collecting jsonschema-specifications&gt;=2023.03.6
-  Using cached jsonschema_specifications-2023.12.1-py3-none-any.whl (18 kB)
-Collecting attrs&gt;=22.2.0
-  Using cached attrs-24.2.0-py3-none-any.whl (63 kB)
-Collecting referencing&gt;=0.28.4
-  Using cached referencing-0.35.1-py3-none-any.whl (26 kB)
-Collecting pkgutil-resolve-name&gt;=1.3.10
-  Using cached pkgutil_resolve_name-1.3.10-py3-none-any.whl (4.7 kB)
-Collecting rpds-py&gt;=0.7.1
-  Using cached rpds_py-0.20.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (355 kB)
+Requirement already satisfied: rpds-py&gt;=0.7.1 in /opt/conda/lib/python3.8/site-packages (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (0.20.0)
+Requirement already satisfied: pkgutil-resolve-name&gt;=1.3.10 in /opt/conda/lib/python3.8/site-packages (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (1.3.10)
+Requirement already satisfied: referencing&gt;=0.28.4 in /opt/conda/lib/python3.8/site-packages (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (0.35.1)
+Requirement already satisfied: attrs&gt;=22.2.0 in /opt/conda/lib/python3.8/site-packages (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (24.2.0)
+Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /opt/conda/lib/python3.8/site-packages (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (2023.12.1)
 Requirement already satisfied: python-dateutil&gt;=2.8.2 in /opt/conda/lib/python3.8/site-packages (from jupyter-client&gt;=6.1.12-&gt;ipykernel&gt;=6.5.0-&gt;jupyterlab) (2.9.0.post0)
-Collecting python-json-logger&gt;=2.0.4
-  Using cached python_json_logger-2.0.7-py3-none-any.whl (8.1 kB)
-Collecting rfc3339-validator
-  Using cached rfc3339_validator-0.1.4-py2.py3-none-any.whl (3.5 kB)
-Collecting rfc3986-validator&gt;=0.1.1
-  Using cached rfc3986_validator-0.1.1-py2.py3-none-any.whl (4.2 kB)
+Requirement already satisfied: python-json-logger&gt;=2.0.4 in /opt/conda/lib/python3.8/site-packages (from jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (2.0.7)
+Requirement already satisfied: rfc3986-validator&gt;=0.1.1 in /opt/conda/lib/python3.8/site-packages (from jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.1.1)
 Requirement already satisfied: pyyaml&gt;=5.3 in /opt/conda/lib/python3.8/site-packages (from jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (5.4.1)
-Collecting bleach!=5.0.0
-  Using cached bleach-6.1.0-py3-none-any.whl (162 kB)
-Collecting mistune&lt;4,&gt;=2.0.3
-  Using cached mistune-3.0.2-py3-none-any.whl (47 kB)
-Collecting tinycss2
-  Using cached tinycss2-1.3.0-py3-none-any.whl (22 kB)
-Collecting jupyterlab-pygments
-  Using cached jupyterlab_pygments-0.3.0-py3-none-any.whl (15 kB)
-Collecting beautifulsoup4
-  Using cached beautifulsoup4-4.12.3-py3-none-any.whl (147 kB)
-Collecting nbclient&gt;=0.5.0
-  Using cached nbclient-0.10.0-py3-none-any.whl (25 kB)
-Collecting defusedxml
-  Using cached defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
-Collecting pandocfilters&gt;=1.4.1
-  Using cached pandocfilters-1.5.1-py2.py3-none-any.whl (8.7 kB)
-Collecting fastjsonschema&gt;=2.15
-  Using cached fastjsonschema-2.20.0-py3-none-any.whl (23 kB)
+Requirement already satisfied: rfc3339-validator in /opt/conda/lib/python3.8/site-packages (from jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.1.4)
+Requirement already satisfied: tinycss2 in /opt/conda/lib/python3.8/site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (1.3.0)
+Requirement already satisfied: defusedxml in /opt/conda/lib/python3.8/site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.7.1)
+Requirement already satisfied: nbclient&gt;=0.5.0 in /opt/conda/lib/python3.8/site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.10.0)
+Requirement already satisfied: mistune&lt;4,&gt;=2.0.3 in /opt/conda/lib/python3.8/site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (3.0.2)
+Requirement already satisfied: beautifulsoup4 in /opt/conda/lib/python3.8/site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (4.12.3)
+Requirement already satisfied: bleach!=5.0.0 in /opt/conda/lib/python3.8/site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (6.1.0)
+Requirement already satisfied: pandocfilters&gt;=1.4.1 in /opt/conda/lib/python3.8/site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (1.5.1)
+Requirement already satisfied: jupyterlab-pygments in /opt/conda/lib/python3.8/site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.3.0)
+Requirement already satisfied: fastjsonschema&gt;=2.15 in /opt/conda/lib/python3.8/site-packages (from nbformat&gt;=5.3.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (2.20.0)
 Requirement already satisfied: ptyprocess&gt;=0.5 in /opt/conda/lib/python3.8/site-packages (from pexpect&gt;4.3-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (0.7.0)
 Requirement already satisfied: wcwidth in /opt/conda/lib/python3.8/site-packages (from prompt-toolkit!=3.0.37,&lt;3.1.0,&gt;=3.0.30-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (0.2.13)
-Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /opt/conda/lib/python3.8/site-packages (from requests&gt;=2.31-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (2.0.4)
 Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /opt/conda/lib/python3.8/site-packages (from requests&gt;=2.31-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (1.26.7)
-Requirement already satisfied: asttokens&gt;=2.1.0 in /opt/conda/lib/python3.8/site-packages (from stack-data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (2.4.1)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /opt/conda/lib/python3.8/site-packages (from requests&gt;=2.31-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (2.0.4)
 Requirement already satisfied: pure-eval in /opt/conda/lib/python3.8/site-packages (from stack-data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (0.2.2)
+Requirement already satisfied: asttokens&gt;=2.1.0 in /opt/conda/lib/python3.8/site-packages (from stack-data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (2.4.1)
 Requirement already satisfied: executing&gt;=1.2.0 in /opt/conda/lib/python3.8/site-packages (from stack-data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (2.0.1)
 Requirement already satisfied: six&gt;=1.12.0 in /opt/conda/lib/python3.8/site-packages (from asttokens&gt;=2.1.0-&gt;stack-data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (1.16.0)
-Collecting webencodings
-  Using cached webencodings-0.5.1-py2.py3-none-any.whl (11 kB)
-Collecting uri-template
-  Using cached uri_template-1.3.0-py3-none-any.whl (11 kB)
+Requirement already satisfied: webencodings in /opt/conda/lib/python3.8/site-packages (from bleach!=5.0.0-&gt;nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.5.1)
+Requirement already satisfied: isoduration in /opt/conda/lib/python3.8/site-packages (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (20.11.0)
 Requirement already satisfied: jsonpointer&gt;1.13 in /opt/conda/lib/python3.8/site-packages (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (2.2)
-Collecting fqdn
-  Using cached fqdn-1.5.1-py3-none-any.whl (9.1 kB)
-Collecting webcolors&gt;=24.6.0
-  Using cached webcolors-24.6.0-py3-none-any.whl (14 kB)
-Collecting isoduration
-  Using cached isoduration-20.11.0-py3-none-any.whl (11 kB)
+Requirement already satisfied: fqdn in /opt/conda/lib/python3.8/site-packages (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (1.5.1)
+Requirement already satisfied: webcolors&gt;=24.6.0 in /opt/conda/lib/python3.8/site-packages (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (24.6.0)
+Requirement already satisfied: uri-template in /opt/conda/lib/python3.8/site-packages (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (1.3.0)
 Requirement already satisfied: cffi&gt;=1.0.1 in /opt/conda/lib/python3.8/site-packages (from argon2-cffi-bindings-&gt;argon2-cffi&gt;=21.1-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (1.14.6)
-Collecting soupsieve&gt;1.2
-  Using cached soupsieve-2.5-py3-none-any.whl (36 kB)
+Requirement already satisfied: soupsieve&gt;1.2 in /opt/conda/lib/python3.8/site-packages (from beautifulsoup4-&gt;nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (2.5)
 Requirement already satisfied: pycparser in /opt/conda/lib/python3.8/site-packages (from cffi&gt;=1.0.1-&gt;argon2-cffi-bindings-&gt;argon2-cffi&gt;=21.1-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (2.21)
-Collecting arrow&gt;=0.15.0
-  Using cached arrow-1.3.0-py3-none-any.whl (66 kB)
-Collecting types-python-dateutil&gt;=2.8.10
-  Using cached types_python_dateutil-2.9.0.20240316-py3-none-any.whl (9.7 kB)
-Installing collected packages: webencodings, fastjsonschema, websocket-client, webcolors, uri-template, types-python-dateutil, tornado, tinycss2, soupsieve, sniffio, send2trash, rpds-py, rfc3986-validator, rfc3339-validator, requests, python-json-logger, prometheus-client, pkgutil-resolve-name, pandocfilters, packaging, overrides, nest-asyncio, mistune, jupyterlab-pygments, json5, importlib-resources, h11, fqdn, exceptiongroup, defusedxml, debugpy, bleach, babel, attrs, async-lru, terminado, referencing, jupyter-client, httpcore, beautifulsoup4, arrow, argon2-cffi-bindings, anyio, jupyter-server-terminals, jsonschema-specifications, isoduration, httpx, argon2-cffi, jsonschema, ipykernel, nbformat, nbclient, jupyter-events, nbconvert, jupyter-server, notebook-shim, jupyterlab-server, jupyter-lsp, jupyterlab
-  Attempting uninstall: websocket-client
-    Found existing installation: websocket-client 1.3.1
-    Uninstalling websocket-client-1.3.1:
-      Successfully uninstalled websocket-client-1.3.1
-  Attempting uninstall: tornado
-    Found existing installation: tornado 6.1
-    Uninstalling tornado-6.1:
-      Successfully uninstalled tornado-6.1
-  Attempting uninstall: requests
-    Found existing installation: requests 2.27.1
-    Uninstalling requests-2.27.1:
-      Successfully uninstalled requests-2.27.1
-  Attempting uninstall: packaging
-    Found existing installation: packaging 21.3
-    Uninstalling packaging-21.3:
-      Successfully uninstalled packaging-21.3
-  Attempting uninstall: attrs
-    Found existing installation: attrs 20.3.0
-    Uninstalling attrs-20.3.0:
-      Successfully uninstalled attrs-20.3.0
-  Attempting uninstall: jupyter-client
-    Found existing installation: jupyter-client 6.1.5
-    Uninstalling jupyter-client-6.1.5:
-      Successfully uninstalled jupyter-client-6.1.5
-  Attempting uninstall: ipykernel
-    Found existing installation: ipykernel 5.5.6
-    Uninstalling ipykernel-5.5.6:
-      Successfully uninstalled ipykernel-5.5.6
+Requirement already satisfied: arrow&gt;=0.15.0 in /opt/conda/lib/python3.8/site-packages (from isoduration-&gt;jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (1.3.0)
+Requirement already satisfied: types-python-dateutil&gt;=2.8.10 in /opt/conda/lib/python3.8/site-packages (from arrow&gt;=0.15.0-&gt;isoduration-&gt;jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (2.9.0.20240316)
+<span class="ansi-yellow-fg">WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span><span class="ansi-yellow-fg">
+</span>Collecting opencv-python-headless==4.5.3.56
+  Using cached opencv_python_headless-4.5.3.56-cp38-cp38-manylinux2014_x86_64.whl (37.1 MB)
+Collecting matplotlib==3.4.3
+  Using cached matplotlib-3.4.3-cp38-cp38-manylinux1_x86_64.whl (10.3 MB)
+Collecting numpy==1.21.2
+  Using cached numpy-1.21.2-cp38-cp38-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.8 MB)
+Collecting pillow==7.0.0
+  Using cached Pillow-7.0.0-cp38-cp38-manylinux1_x86_64.whl (2.1 MB)
+Collecting bokeh==2.1.1
+  Using cached bokeh-2.1.1-py3-none-any.whl
+Collecting torch==1.9.0
+  Using cached torch-1.9.0-cp38-cp38-manylinux1_x86_64.whl (831.4 MB)
+Collecting torchvision==0.10.0
+  Using cached torchvision-0.10.0-cp38-cp38-manylinux1_x86_64.whl (22.1 MB)
+Collecting tqdm==4.63.0
+  Using cached tqdm-4.63.0-py2.py3-none-any.whl (76 kB)
+Collecting ipywidgets==7.6.5
+  Using cached ipywidgets-7.6.5-py2.py3-none-any.whl (121 kB)
+Collecting livelossplot==0.5.4
+  Using cached livelossplot-0.5.4-py3-none-any.whl (22 kB)
+Collecting pytest==7.1.1
+  Using cached pytest-7.1.1-py3-none-any.whl (297 kB)
+Collecting pandas==1.3.5
+  Using cached pandas-1.3.5-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.5 MB)
+Requirement already satisfied: seaborn==0.11.2 in /opt/conda/lib/python3.8/site-packages (from -r requirements.txt (line 13)) (0.11.2)
+Requirement already satisfied: python-dateutil&gt;=2.7 in /opt/conda/lib/python3.8/site-packages (from matplotlib==3.4.3-&gt;-r requirements.txt (line 2)) (2.9.0.post0)
+Requirement already satisfied: cycler&gt;=0.10 in /opt/conda/lib/python3.8/site-packages (from matplotlib==3.4.3-&gt;-r requirements.txt (line 2)) (0.11.0)
+Requirement already satisfied: pyparsing&gt;=2.2.1 in /opt/conda/lib/python3.8/site-packages (from matplotlib==3.4.3-&gt;-r requirements.txt (line 2)) (3.0.7)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/conda/lib/python3.8/site-packages (from matplotlib==3.4.3-&gt;-r requirements.txt (line 2)) (1.3.2)
+Requirement already satisfied: packaging&gt;=16.8 in /opt/conda/lib/python3.8/site-packages (from bokeh==2.1.1-&gt;-r requirements.txt (line 5)) (24.1)
+Requirement already satisfied: Jinja2&gt;=2.7 in /opt/conda/lib/python3.8/site-packages (from bokeh==2.1.1-&gt;-r requirements.txt (line 5)) (3.0.3)
+Requirement already satisfied: tornado&gt;=5.1 in /opt/conda/lib/python3.8/site-packages (from bokeh==2.1.1-&gt;-r requirements.txt (line 5)) (6.4.1)
+Requirement already satisfied: typing-extensions&gt;=3.7.4 in /opt/conda/lib/python3.8/site-packages (from bokeh==2.1.1-&gt;-r requirements.txt (line 5)) (4.9.0)
+Requirement already satisfied: PyYAML&gt;=3.10 in /opt/conda/lib/python3.8/site-packages (from bokeh==2.1.1-&gt;-r requirements.txt (line 5)) (5.4.1)
+Requirement already satisfied: ipython&gt;=4.0.0 in /opt/conda/lib/python3.8/site-packages (from ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (8.12.3)
+Requirement already satisfied: ipython-genutils~=0.2.0 in /opt/conda/lib/python3.8/site-packages (from ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.2.0)
+Requirement already satisfied: nbformat&gt;=4.2.0 in /opt/conda/lib/python3.8/site-packages (from ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (5.10.4)
+Requirement already satisfied: ipykernel&gt;=4.5.1 in /opt/conda/lib/python3.8/site-packages (from ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (6.29.5)
+Collecting widgetsnbextension~=3.5.0
+  Using cached widgetsnbextension-3.5.2-py2.py3-none-any.whl (1.6 MB)
+Requirement already satisfied: traitlets&gt;=4.3.1 in /opt/conda/lib/python3.8/site-packages (from ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (5.14.1)
+Requirement already satisfied: jupyterlab-widgets&gt;=1.0.0 in /opt/conda/lib/python3.8/site-packages (from ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (3.0.11)
+Collecting iniconfig
+  Using cached iniconfig-2.0.0-py3-none-any.whl (5.9 kB)
+Collecting py&gt;=1.8.2
+  Using cached py-1.11.0-py2.py3-none-any.whl (98 kB)
+Collecting pluggy&lt;2.0,&gt;=0.12
+  Using cached pluggy-1.5.0-py3-none-any.whl (20 kB)
+Requirement already satisfied: attrs&gt;=19.2.0 in /opt/conda/lib/python3.8/site-packages (from pytest==7.1.1-&gt;-r requirements.txt (line 11)) (24.2.0)
+Requirement already satisfied: tomli&gt;=1.0.0 in /opt/conda/lib/python3.8/site-packages (from pytest==7.1.1-&gt;-r requirements.txt (line 11)) (2.0.1)
+Requirement already satisfied: pytz&gt;=2017.3 in /opt/conda/lib/python3.8/site-packages (from pandas==1.3.5-&gt;-r requirements.txt (line 12)) (2021.3)
+Requirement already satisfied: scipy&gt;=1.0 in /opt/conda/lib/python3.8/site-packages (from seaborn==0.11.2-&gt;-r requirements.txt (line 13)) (1.8.0)
+Requirement already satisfied: psutil in /opt/conda/lib/python3.8/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (5.9.0)
+Requirement already satisfied: nest-asyncio in /opt/conda/lib/python3.8/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (1.6.0)
+Requirement already satisfied: pyzmq&gt;=24 in /opt/conda/lib/python3.8/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (25.1.2)
+Requirement already satisfied: comm&gt;=0.1.1 in /opt/conda/lib/python3.8/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.2.2)
+Requirement already satisfied: matplotlib-inline&gt;=0.1 in /opt/conda/lib/python3.8/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.1.7)
+Requirement already satisfied: debugpy&gt;=1.6.5 in /opt/conda/lib/python3.8/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (1.8.5)
+Requirement already satisfied: jupyter-core!=5.0.*,&gt;=4.12 in /opt/conda/lib/python3.8/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (5.7.0)
+Requirement already satisfied: jupyter-client&gt;=6.1.12 in /opt/conda/lib/python3.8/site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (8.6.2)
+Requirement already satisfied: decorator in /opt/conda/lib/python3.8/site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (5.1.1)
+Requirement already satisfied: jedi&gt;=0.16 in /opt/conda/lib/python3.8/site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.19.1)
+Requirement already satisfied: pickleshare in /opt/conda/lib/python3.8/site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.7.5)
+Requirement already satisfied: prompt-toolkit!=3.0.37,&lt;3.1.0,&gt;=3.0.30 in /opt/conda/lib/python3.8/site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (3.0.43)
+Requirement already satisfied: pygments&gt;=2.4.0 in /opt/conda/lib/python3.8/site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (2.17.2)
+Requirement already satisfied: pexpect&gt;4.3 in /opt/conda/lib/python3.8/site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (4.9.0)
+Requirement already satisfied: backcall in /opt/conda/lib/python3.8/site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.2.0)
+Requirement already satisfied: stack-data in /opt/conda/lib/python3.8/site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.6.3)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/conda/lib/python3.8/site-packages (from Jinja2&gt;=2.7-&gt;bokeh==2.1.1-&gt;-r requirements.txt (line 5)) (2.1.0)
+Requirement already satisfied: jsonschema&gt;=2.6 in /opt/conda/lib/python3.8/site-packages (from nbformat&gt;=4.2.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (4.23.0)
+Requirement already satisfied: fastjsonschema&gt;=2.15 in /opt/conda/lib/python3.8/site-packages (from nbformat&gt;=4.2.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (2.20.0)
+Requirement already satisfied: six&gt;=1.5 in /opt/conda/lib/python3.8/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib==3.4.3-&gt;-r requirements.txt (line 2)) (1.16.0)
+Collecting notebook&gt;=4.4.1
+  Using cached notebook-7.2.1-py3-none-any.whl (5.0 MB)
+Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.3 in /opt/conda/lib/python3.8/site-packages (from jedi&gt;=0.16-&gt;ipython&gt;=4.0.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.8.4)
+Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /opt/conda/lib/python3.8/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (2023.12.1)
+Requirement already satisfied: importlib-resources&gt;=1.4.0 in /opt/conda/lib/python3.8/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (6.4.0)
+Requirement already satisfied: pkgutil-resolve-name&gt;=1.3.10 in /opt/conda/lib/python3.8/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (1.3.10)
+Requirement already satisfied: referencing&gt;=0.28.4 in /opt/conda/lib/python3.8/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.35.1)
+Requirement already satisfied: rpds-py&gt;=0.7.1 in /opt/conda/lib/python3.8/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.20.0)
+Requirement already satisfied: importlib-metadata&gt;=4.8.3 in /opt/conda/lib/python3.8/site-packages (from jupyter-client&gt;=6.1.12-&gt;ipykernel&gt;=4.5.1-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (4.11.2)
+Requirement already satisfied: platformdirs&gt;=2.5 in /opt/conda/lib/python3.8/site-packages (from jupyter-core!=5.0.*,&gt;=4.12-&gt;ipykernel&gt;=4.5.1-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (4.2.2)
+Requirement already satisfied: notebook-shim&lt;0.3,&gt;=0.2 in /opt/conda/lib/python3.8/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.2.4)
+Requirement already satisfied: jupyterlab&lt;4.3,&gt;=4.2.0 in /opt/conda/lib/python3.8/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (4.2.4)
+Requirement already satisfied: jupyter-server&lt;3,&gt;=2.4.0 in /opt/conda/lib/python3.8/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (2.14.2)
+Requirement already satisfied: jupyterlab-server&lt;3,&gt;=2.27.1 in /opt/conda/lib/python3.8/site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (2.27.3)
+Requirement already satisfied: ptyprocess&gt;=0.5 in /opt/conda/lib/python3.8/site-packages (from pexpect&gt;4.3-&gt;ipython&gt;=4.0.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.7.0)
+Requirement already satisfied: wcwidth in /opt/conda/lib/python3.8/site-packages (from prompt-toolkit!=3.0.37,&lt;3.1.0,&gt;=3.0.30-&gt;ipython&gt;=4.0.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.2.13)
+Requirement already satisfied: pure-eval in /opt/conda/lib/python3.8/site-packages (from stack-data-&gt;ipython&gt;=4.0.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.2.2)
+Requirement already satisfied: executing&gt;=1.2.0 in /opt/conda/lib/python3.8/site-packages (from stack-data-&gt;ipython&gt;=4.0.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (2.0.1)
+Requirement already satisfied: asttokens&gt;=2.1.0 in /opt/conda/lib/python3.8/site-packages (from stack-data-&gt;ipython&gt;=4.0.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (2.4.1)
+Requirement already satisfied: zipp&gt;=0.5 in /opt/conda/lib/python3.8/site-packages (from importlib-metadata&gt;=4.8.3-&gt;jupyter-client&gt;=6.1.12-&gt;ipykernel&gt;=4.5.1-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (3.7.0)
+Requirement already satisfied: websocket-client&gt;=1.7 in /opt/conda/lib/python3.8/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (1.8.0)
+Requirement already satisfied: jupyter-server-terminals&gt;=0.4.4 in /opt/conda/lib/python3.8/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.5.3)
+Requirement already satisfied: terminado&gt;=0.8.3 in /opt/conda/lib/python3.8/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.18.1)
+Requirement already satisfied: jupyter-events&gt;=0.9.0 in /opt/conda/lib/python3.8/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.10.0)
+Requirement already satisfied: argon2-cffi&gt;=21.1 in /opt/conda/lib/python3.8/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (23.1.0)
+Requirement already satisfied: nbconvert&gt;=6.4.4 in /opt/conda/lib/python3.8/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (7.16.4)
+Requirement already satisfied: overrides&gt;=5.0 in /opt/conda/lib/python3.8/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (7.7.0)
+Requirement already satisfied: send2trash&gt;=1.8.2 in /opt/conda/lib/python3.8/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (1.8.3)
+Requirement already satisfied: anyio&gt;=3.1.0 in /opt/conda/lib/python3.8/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (4.4.0)
+Requirement already satisfied: prometheus-client&gt;=0.9 in /opt/conda/lib/python3.8/site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.20.0)
+Requirement already satisfied: async-lru&gt;=1.0.0 in /opt/conda/lib/python3.8/site-packages (from jupyterlab&lt;4.3,&gt;=4.2.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (2.0.4)
+Requirement already satisfied: jupyter-lsp&gt;=2.0.0 in /opt/conda/lib/python3.8/site-packages (from jupyterlab&lt;4.3,&gt;=4.2.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (2.2.5)
+Requirement already satisfied: setuptools&gt;=40.1.0 in /opt/conda/lib/python3.8/site-packages (from jupyterlab&lt;4.3,&gt;=4.2.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (60.9.3)
+Requirement already satisfied: httpx&gt;=0.25.0 in /opt/conda/lib/python3.8/site-packages (from jupyterlab&lt;4.3,&gt;=4.2.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.27.0)
+Requirement already satisfied: babel&gt;=2.10 in /opt/conda/lib/python3.8/site-packages (from jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (2.16.0)
+Requirement already satisfied: requests&gt;=2.31 in /opt/conda/lib/python3.8/site-packages (from jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (2.32.3)
+Requirement already satisfied: json5&gt;=0.9.0 in /opt/conda/lib/python3.8/site-packages (from jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.9.25)
+Requirement already satisfied: idna&gt;=2.8 in /opt/conda/lib/python3.8/site-packages (from anyio&gt;=3.1.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (3.3)
+Requirement already satisfied: exceptiongroup&gt;=1.0.2 in /opt/conda/lib/python3.8/site-packages (from anyio&gt;=3.1.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (1.2.2)
+Requirement already satisfied: sniffio&gt;=1.1 in /opt/conda/lib/python3.8/site-packages (from anyio&gt;=3.1.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (1.3.1)
+Requirement already satisfied: argon2-cffi-bindings in /opt/conda/lib/python3.8/site-packages (from argon2-cffi&gt;=21.1-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (21.2.0)
+Requirement already satisfied: httpcore==1.* in /opt/conda/lib/python3.8/site-packages (from httpx&gt;=0.25.0-&gt;jupyterlab&lt;4.3,&gt;=4.2.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (1.0.5)
+Requirement already satisfied: certifi in /opt/conda/lib/python3.8/site-packages (from httpx&gt;=0.25.0-&gt;jupyterlab&lt;4.3,&gt;=4.2.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (2021.10.8)
+Requirement already satisfied: h11&lt;0.15,&gt;=0.13 in /opt/conda/lib/python3.8/site-packages (from httpcore==1.*-&gt;httpx&gt;=0.25.0-&gt;jupyterlab&lt;4.3,&gt;=4.2.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.14.0)
+Requirement already satisfied: rfc3339-validator in /opt/conda/lib/python3.8/site-packages (from jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.1.4)
+Requirement already satisfied: python-json-logger&gt;=2.0.4 in /opt/conda/lib/python3.8/site-packages (from jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (2.0.7)
+Requirement already satisfied: rfc3986-validator&gt;=0.1.1 in /opt/conda/lib/python3.8/site-packages (from jupyter-events&gt;=0.9.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.1.1)
+Requirement already satisfied: mistune&lt;4,&gt;=2.0.3 in /opt/conda/lib/python3.8/site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (3.0.2)
+Requirement already satisfied: pandocfilters&gt;=1.4.1 in /opt/conda/lib/python3.8/site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (1.5.1)
+Requirement already satisfied: nbclient&gt;=0.5.0 in /opt/conda/lib/python3.8/site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.10.0)
+Requirement already satisfied: tinycss2 in /opt/conda/lib/python3.8/site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (1.3.0)
+Requirement already satisfied: jupyterlab-pygments in /opt/conda/lib/python3.8/site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.3.0)
+Requirement already satisfied: beautifulsoup4 in /opt/conda/lib/python3.8/site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (4.12.3)
+Requirement already satisfied: bleach!=5.0.0 in /opt/conda/lib/python3.8/site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (6.1.0)
+Requirement already satisfied: defusedxml in /opt/conda/lib/python3.8/site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.7.1)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /opt/conda/lib/python3.8/site-packages (from requests&gt;=2.31-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (2.0.4)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /opt/conda/lib/python3.8/site-packages (from requests&gt;=2.31-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (1.26.7)
+Requirement already satisfied: webencodings in /opt/conda/lib/python3.8/site-packages (from bleach!=5.0.0-&gt;nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (0.5.1)
+Requirement already satisfied: isoduration in /opt/conda/lib/python3.8/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (20.11.0)
+Requirement already satisfied: jsonpointer&gt;1.13 in /opt/conda/lib/python3.8/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (2.2)
+Requirement already satisfied: webcolors&gt;=24.6.0 in /opt/conda/lib/python3.8/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (24.6.0)
+Requirement already satisfied: uri-template in /opt/conda/lib/python3.8/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (1.3.0)
+Requirement already satisfied: fqdn in /opt/conda/lib/python3.8/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (1.5.1)
+Requirement already satisfied: cffi&gt;=1.0.1 in /opt/conda/lib/python3.8/site-packages (from argon2-cffi-bindings-&gt;argon2-cffi&gt;=21.1-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (1.14.6)
+Requirement already satisfied: soupsieve&gt;1.2 in /opt/conda/lib/python3.8/site-packages (from beautifulsoup4-&gt;nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (2.5)
+Requirement already satisfied: pycparser in /opt/conda/lib/python3.8/site-packages (from cffi&gt;=1.0.1-&gt;argon2-cffi-bindings-&gt;argon2-cffi&gt;=21.1-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (2.21)
+Requirement already satisfied: arrow&gt;=0.15.0 in /opt/conda/lib/python3.8/site-packages (from isoduration-&gt;jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (1.3.0)
+Requirement already satisfied: types-python-dateutil&gt;=2.8.10 in /opt/conda/lib/python3.8/site-packages (from arrow&gt;=0.15.0-&gt;isoduration-&gt;jsonschema&gt;=2.6-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets==7.6.5-&gt;-r requirements.txt (line 9)) (2.9.0.20240316)
+Installing collected packages: tqdm, torch, py, pluggy, pillow, numpy, iniconfig, torchvision, pytest, pandas, opencv-python-headless, matplotlib, bokeh, livelossplot, notebook, widgetsnbextension, ipywidgets
+  Attempting uninstall: tqdm
+    Found existing installation: tqdm 4.62.3
+    Uninstalling tqdm-4.62.3:
+      Successfully uninstalled tqdm-4.62.3
+  Attempting uninstall: torch
+    Found existing installation: torch 1.10.2+cu113
+    Uninstalling torch-1.10.2+cu113:
+      Successfully uninstalled torch-1.10.2+cu113
+  Attempting uninstall: pillow
+    Found existing installation: Pillow 9.0.1
+    Uninstalling Pillow-9.0.1:
+      Successfully uninstalled Pillow-9.0.1
+  Attempting uninstall: numpy
+    Found existing installation: numpy 1.22.2
+    Uninstalling numpy-1.22.2:
+      Successfully uninstalled numpy-1.22.2
+  Attempting uninstall: torchvision
+    Found existing installation: torchvision 0.11.3
+    Uninstalling torchvision-0.11.3:
+      Successfully uninstalled torchvision-0.11.3
+  Attempting uninstall: pandas
+    Found existing installation: pandas 1.4.1
+    Uninstalling pandas-1.4.1:
+      Successfully uninstalled pandas-1.4.1
+  Attempting uninstall: matplotlib
+    Found existing installation: matplotlib 3.5.1
+    Uninstalling matplotlib-3.5.1:
+      Successfully uninstalled matplotlib-3.5.1
+  Attempting uninstall: bokeh
+    Found existing installation: bokeh 2.4.2
+    Uninstalling bokeh-2.4.2:
+      Successfully uninstalled bokeh-2.4.2
+  Attempting uninstall: widgetsnbextension
+    Found existing installation: widgetsnbextension 4.0.11
+    Uninstalling widgetsnbextension-4.0.11:
+      Successfully uninstalled widgetsnbextension-4.0.11
+  Attempting uninstall: ipywidgets
+    Found existing installation: ipywidgets 8.1.3
+    Uninstalling ipywidgets-8.1.3:
+      Successfully uninstalled ipywidgets-8.1.3
 <span class="ansi-red-fg">ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
-sagemaker 2.77.1 requires attrs==20.3.0, but you have attrs 24.2.0 which is incompatible.</span><span class="ansi-red-fg">
-</span>Successfully installed anyio-4.4.0 argon2-cffi-23.1.0 argon2-cffi-bindings-21.2.0 arrow-1.3.0 async-lru-2.0.4 attrs-24.2.0 babel-2.16.0 beautifulsoup4-4.12.3 bleach-6.1.0 debugpy-1.8.5 defusedxml-0.7.1 exceptiongroup-1.2.2 fastjsonschema-2.20.0 fqdn-1.5.1 h11-0.14.0 httpcore-1.0.5 httpx-0.27.0 importlib-resources-6.4.0 ipykernel-6.29.5 isoduration-20.11.0 json5-0.9.25 jsonschema-4.23.0 jsonschema-specifications-2023.12.1 jupyter-client-8.6.2 jupyter-events-0.10.0 jupyter-lsp-2.2.5 jupyter-server-2.14.2 jupyter-server-terminals-0.5.3 jupyterlab-4.2.4 jupyterlab-pygments-0.3.0 jupyterlab-server-2.27.3 mistune-3.0.2 nbclient-0.10.0 nbconvert-7.16.4 nbformat-5.10.4 nest-asyncio-1.6.0 notebook-shim-0.2.4 overrides-7.7.0 packaging-24.1 pandocfilters-1.5.1 pkgutil-resolve-name-1.3.10 prometheus-client-0.20.0 python-json-logger-2.0.7 referencing-0.35.1 requests-2.32.3 rfc3339-validator-0.1.4 rfc3986-validator-0.1.1 rpds-py-0.20.0 send2trash-1.8.3 sniffio-1.3.1 soupsieve-2.5 terminado-0.18.1 tinycss2-1.3.0 tornado-6.4.1 types-python-dateutil-2.9.0.20240316 uri-template-1.3.0 webcolors-24.6.0 webencodings-0.5.1 websocket-client-1.8.0
+sagemaker 2.77.1 requires attrs==20.3.0, but you have attrs 24.2.0 which is incompatible.
+imageio 2.16.1 requires pillow&gt;=8.3.2, but you have pillow 7.0.0 which is incompatible.</span><span class="ansi-red-fg">
+</span>Successfully installed bokeh-2.1.1 iniconfig-2.0.0 ipywidgets-7.6.5 livelossplot-0.5.4 matplotlib-3.4.3 notebook-7.2.1 numpy-1.21.2 opencv-python-headless-4.5.3.56 pandas-1.3.5 pillow-7.0.0 pluggy-1.5.0 py-1.11.0 pytest-7.1.1 torch-1.9.0 torchvision-0.10.0 tqdm-4.63.0 widgetsnbextension-3.5.2
 <span class="ansi-yellow-fg">WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span><span class="ansi-yellow-fg">
 </span>usage: jupyter [-h] [--version] [--config-dir] [--data-dir] [--runtime-dir]
                [--paths] [--json] [--debug]
@@ -7793,7 +7887,7 @@ optional arguments:
   --debug        output debug information about paths
 
 Available subcommands: dejavu events execute kernel kernelspec lab
-labextension labhub migrate nbconvert run server troubleshoot trust
+labextension labhub migrate nbconvert notebook run server troubleshoot trust
 
 Jupyter command `jupyter-nbextension` not found.
 <span class="ansi-yellow-fg">(Deprecated) Installing extensions with the jupyter labextension install command is now deprecated and will be removed in a future major version of JupyterLab.
@@ -7803,7 +7897,7 @@ Users should manage prebuilt extensions with package managers like pip and conda
   warnings.warn("An error occurred.")
 /opt/conda/lib/python3.8/site-packages/jupyterlab/debuglog.py:55: UserWarning: ValueError: Please install Node.js and npm before continuing installation. You may be able to install Node.js from your package manager, from conda, or directly from the Node.js website (https://nodejs.org).
   warnings.warn(msg[-1].strip())
-/opt/conda/lib/python3.8/site-packages/jupyterlab/debuglog.py:56: UserWarning: See the log file for details: /tmp/jupyterlab-debug-mqzmkkgb.log
+/opt/conda/lib/python3.8/site-packages/jupyterlab/debuglog.py:56: UserWarning: See the log file for details: /tmp/jupyterlab-debug-ckte79tr.log
   warnings.warn(f"See the log file for details: {log_path!s}")
 </pre>
 </div>
@@ -7815,7 +7909,7 @@ Users should manage prebuilt extensions with package managers like pip and conda
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">VBox</span><span class="p">,</span> <span class="n">Button</span><span class="p">,</span> <span class="n">FileUpload</span><span class="p">,</span> <span class="n">Output</span><span class="p">,</span> <span class="n">Label</span>
@@ -7898,71 +7992,8 @@ Users should manage prebuilt extensions with package managers like pip and conda
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/opt/conda/lib/python3.8/site-packages/torchvision/io/image.py:11: UserWarning: Failed to load image Python extension: 
-  warn(f"Failed to load image Python extension: {e}")
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">RuntimeError</span>                              Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[4], line 11</span>
-<span class="ansi-green-intense-fg ansi-bold">      8</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> <span class="ansi-bold" style="color: rgb(0,0,255)">torch</span>
-<span class="ansi-green-intense-fg ansi-bold">     10</span> <span style="color: rgb(95,135,135)"># Decide which model you want to use among the ones exported</span>
-<span class="ansi-green-fg">---&gt; 11</span> learn_inf <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">torch</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">jit</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">load</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">"</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">checkpoints/transfer_exported.pt</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">"</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     13</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">on_click_classify</span>(change):
-<span class="ansi-green-intense-fg ansi-bold">     14</span> 
-<span class="ansi-green-intense-fg ansi-bold">     15</span>     <span style="color: rgb(95,135,135)"># Load image that has been uploaded</span>
-<span class="ansi-green-intense-fg ansi-bold">     16</span>     fn <span style="color: rgb(98,98,98)">=</span> io<span style="color: rgb(98,98,98)">.</span>BytesIO(btn_upload<span style="color: rgb(98,98,98)">.</span>data[<span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">1</span>])
-
-File <span class="ansi-green-fg">/opt/conda/lib/python3.8/site-packages/torch/jit/_serialization.py:161</span>, in <span class="ansi-cyan-fg">load</span><span class="ansi-blue-fg">(f, map_location, _extra_files)</span>
-<span class="ansi-green-intense-fg ansi-bold">    159</span> cu <span style="color: rgb(98,98,98)">=</span> torch<span style="color: rgb(98,98,98)">.</span>_C<span style="color: rgb(98,98,98)">.</span>CompilationUnit()
-<span class="ansi-green-intense-fg ansi-bold">    160</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">isinstance</span>(f, <span style="color: rgb(0,135,0)">str</span>) <span class="ansi-bold" style="color: rgb(175,0,255)">or</span> <span style="color: rgb(0,135,0)">isinstance</span>(f, pathlib<span style="color: rgb(98,98,98)">.</span>Path):
-<span class="ansi-green-fg">--&gt; 161</span>     cpp_module <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">torch</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_C</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">import_ir_module</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">cu</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">str</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">f</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">map_location</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">_extra_files</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    162</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
-<span class="ansi-green-intense-fg ansi-bold">    163</span>     cpp_module <span style="color: rgb(98,98,98)">=</span> torch<span style="color: rgb(98,98,98)">.</span>_C<span style="color: rgb(98,98,98)">.</span>import_ir_module_from_buffer(
-<span class="ansi-green-intense-fg ansi-bold">    164</span>         cu, f<span style="color: rgb(98,98,98)">.</span>read(), map_location, _extra_files
-<span class="ansi-green-intense-fg ansi-bold">    165</span>     )
-
-<span class="ansi-red-fg">RuntimeError</span>: 
-Unknown builtin op: torchvision::_interpolate_linear_aa.
-Could not find any similar ops to torchvision::_interpolate_linear_aa. This op may not exist or may not be currently supported in TorchScript.
-:
-  File "/opt/conda/lib/python3.8/site-packages/torchvision/transforms/functional_tensor.py", line 548
-    if antialias:
-        if interpolation == "bilinear":
-            img = torch.ops.torchvision._interpolate_linear_aa(img, [new_h, new_w], align_corners=False)
-                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ &lt;--- HERE
-        elif interpolation == "bicubic":
-            img = torch.ops.torchvision._interpolate_bicubic_aa(img, [new_h, new_w], align_corners=False)
-Serialized   File "code/__torch__/torchvision/transforms/functional_tensor.py", line 107
-      _35 = torch.eq(interpolation0, "bilinear")
-      if _35:
-        img3 = ops.torchvision._interpolate_linear_aa(img0, [new_h, new_w], False)
-               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ &lt;--- HERE
-        img2 = img3
-      else:
-'resize' is being compiled since it was called from 'resize'
-Serialized   File "code/__torch__/torchvision/transforms/functional.py", line 13
-    max_size: Optional[int]=None,
-    antialias: Optional[bool]=None) -&gt; Tensor:
-  _0 = __torch__.torchvision.transforms.functional_tensor.resize
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ &lt;--- HERE
-  interpolation0 = unchecked_cast(__torch__.torchvision.transforms.functional.InterpolationMode, interpolation)
-  img0 = unchecked_cast(Tensor, img)
-'resize' is being compiled since it was called from 'Resize.forward'
-Serialized   File "code/__torch__/torchvision/transforms/transforms.py", line 12
-  def forward(self: __torch__.torchvision.transforms.transforms.Resize,
-    img: Tensor) -&gt; Tensor:
-    _0 = __torch__.torchvision.transforms.functional.resize
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ &lt;--- HERE
-    _1 = _0(img, self.size, self.interpolation, self.max_size, self.antialias, )
-    return _1
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>VBox(children=(Label(value='Please upload a picture of a landmark'), FileUpload(value={}, description='Upload'…</pre>
 </div>
 </div>
 </div>
